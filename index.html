@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bright Star Support Hub</title>
+    <link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="help.css">
+</head>
+<body>
+
+    <!-- VISUAL BACKGROUND ORBS ANIMATION -->
+    <div class="background-animation">
+        <span></span><span></span><span></span><span></span>
+        <span></span>
+    </div>
+
+    <!-- MAIN HELP CENTER WRAPPER -->
+    <div class="help-wrapper">
+        <div class="help-header">
+            <h1>Bright Star Support Hub</h1>
+            <p>Connect instantly with our dispatch team globally 24/7.</p>
+        </div>
+
+        <div class="help-grid">
+            <!-- TICKET INTAKE INTERACTIVE FORM SCREEN -->
+            <div id="formContainer" class="glass-card">
+                <div class="card-badge">Instant Verification</div>
+                <h2>Open Live Chat Ticket</h2>
+                <p class="subtitle">Provide your credentials below to initialize an executive data chat channel.</p>
+                
+                <form id="liveSupportForm" onsubmit="initiateLiveChat(event)">
+                    <div class="input-group">
+                        <input type="text" id="custName" required placeholder=" ">
+                        <label>Your Full Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" id="custEmail" required placeholder=" ">
+                        <label>Email Address</label>
+                    </div>
+                    <div class="input-group">
+                        <textarea id="custMessage" required placeholder=" "></textarea>
+                        <label>What do you need assistance with?</label>
+                    </div>
+                    <button type="submit" class="premium-btn">
+                        <span>Open Live Chat Ticket</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                    </button>
+                </form>
+            </div>
+
+            <!-- IMMERSIVE CHAT WINDOW TIMELINE LOGGER -->
+            <div id="chatBoxContainer" class="glass-card" style="display: none;">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+                    <div class="card-badge" id="chatStatusBadge">🟢 Local Sandbox Mode</div>
+                    <button onclick="clearUserSession()" style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.1); color:#ffffff; padding:5px 10px; border-radius:8px; font-size:11px; font-weight:600; cursor:pointer;">New Ticket</button>
+                </div>
+                
+                <div class="chat-message-log" id="userChatLog"></div>
+                
+                <form class="chat-input-row" onsubmit="sendUserChatMessage(event)">
+                    <input type="text" id="chatUserMsgInput" placeholder="Type message parameters..." autocomplete="off" required>
+                    <label for="userImageInput" class="attach-img-btn">🖼️</label>
+                    <input type="file" id="userImageInput" accept="image/*" style="display: none;" onchange="uploadUserImage(this)">
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+
+            <!-- FAQ ACCORDION ENGINE BLOCK -->
+            <div class="glass-card">
+                <div class="card-badge">Instant Database</div>
+                <h2>Frequently Asked</h2>
+                <p class="subtitle">Quickly resolve logistical queries from our knowledge directory.</p>
+                <div class="accordion-container">
+                    <div class="accordion-item">
+                        <button class="accordion-header" onclick="toggleAccordion(this)">
+                            <span>How long does delivery take?</span>
+                            <span class="icon-chevron"></span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Standard timelines range between 2 to 5 business days across Nigerian domestic networks.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation-footer">
+            <a href="index.html" class="elegant-back-btn">← Return to Shopping Grid</a>
+        </div>
+    </div>
+
+</body>
+</html>
